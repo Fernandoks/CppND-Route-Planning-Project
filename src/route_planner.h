@@ -20,6 +20,9 @@ class RoutePlanner {
     std::vector<RouteModel::Node> ConstructFinalPath(RouteModel::Node *);
     RouteModel::Node *NextNode();
 
+    //auxiliar method - public to be used by std
+    static bool compare(RouteModel::Node *n1, RouteModel::Node *n2);
+
   private:
     // Add private variables or methods declarations here.
     std::vector<RouteModel::Node*> open_list;
@@ -28,6 +31,10 @@ class RoutePlanner {
 
     float distance = 0.0f;
     RouteModel &m_Model;
+
+  
 };
+
+bool comparefunc(RouteModel::Node *n1, RouteModel::Node *n2);
 
 #endif
